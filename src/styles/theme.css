@@ -1,0 +1,13 @@
+/* ...existing styles... */
+
+.toon-left img { width: 64px; height: 64px; }
+
+/* Fallback emoji styling if image fails */
+.toon-left .toon-fallback {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}

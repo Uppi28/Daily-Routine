@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toon Cheer">
+  <circle cx="48" cy="48" r="44" fill="#FFD54A" stroke="#2A1F00" stroke-width="4"/>
+  <circle cx="34" cy="40" r="6" fill="#2A1F00"/>
+  <circle cx="62" cy="40" r="6" fill="#2A1F00"/>
+  <path d="M28 62 C 40 74, 56 74, 68 62" fill="none" stroke="#2A1F00" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="16" cy="20" r="6" fill="#FF6B6B"/>
+  <circle cx="80" cy="22" r="5" fill="#6DD400"/>
+</svg>

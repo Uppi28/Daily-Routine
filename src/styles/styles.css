@@ -1,0 +1,277 @@
+/* Base styles and layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* App shell */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding-bottom: 80px; /* Space for bottom nav */
+}
+
+/* Screen layout */
+.screen {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--bg);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Buttons */
+.btn {
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.add {
+  background: var(--success-bg);
+  color: var(--success-ink);
+}
+
+/* Card list */
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Todo specific styles */
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.todo.done {
+  opacity: 0.6;
+}
+
+.todo.done .title {
+  text-decoration: line-through;
+}
+
+.todo .check {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.todo .check:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.todo .title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.todo .xp {
+  background: var(--brand);
+  color: var(--brand-ink);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  padding: 12px 20px;
+  gap: 8px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+}
+
+.nav-item {
+  flex: 1;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 12px 8px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  background: rgba(0,0,0,0.05);
+}
+
+.nav-item.active {
+  opacity: 1;
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+/* ToonGuide styles */
+.toon-overlay {
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toon-bubble {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.toon-left {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.toon-left img {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+.toon-left .toon-fallback {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.toon-right {
+  flex: 1;
+}
+
+.toon-text {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.toon-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn.primary {
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .screen {
+    padding: 16px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .todo .title {
+    font-size: 16px;
+  }
+} 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import toonCheer from '../assets/toon-cheer.svg';
 
 type ToonMessage = {
   id: string;
@@ -64,7 +65,16 @@ export function ToonGuide({ messageQueue, onDismiss, reducedMotion }: Props) {
         >
           <div className="toon-bubble">
             <div className="toon-left">
-              <img src="/icons/toon-cheer.svg" alt="" aria-hidden="true" />
+              <img
+                src={toonCheer}
+                alt=""
+                aria-hidden="true"
+                onError={(e) => {
+                  // hide broken image, emoji fallback will show
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <span className="toon-fallback" aria-hidden="true" role="img">🎉</span>
             </div>
             <div className="toon-right">
               <p className="toon-text">{current.text}</p>
