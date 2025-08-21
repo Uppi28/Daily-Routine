@@ -1,0 +1,13 @@
+:root {
+  --bg: #fff7d6;
+  --card: #ffffff;
+  --ink: #1f1f1f;
+  --brand: #ffd54a;
+  --brand-ink: #2a1f00;
+  --success-bg: #eaffea;
+  --success-ink: #146c2e;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+}
